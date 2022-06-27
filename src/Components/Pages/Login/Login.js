@@ -1,6 +1,17 @@
 import React from 'react';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 
 const Login = () => {
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const navigate = useNavigate()
+
+    if (user) {
+        toast.success('Successfully Login with');
+        navigate('/')
+    }
     return (
 
         <div className="hero min-h-screen bg-base-200">
@@ -27,6 +38,10 @@ const Login = () => {
                         <label className="label">
                             <a href="/signup" className="label-text-alt link link-hover">Don't have An Account</a>
                         </label>
+                        <div className='grid grid-flow-col gap-5 '>
+                            <button onClick={() => signInWithGoogle()} className='btn btn-success  '> Continue With Google</button>
+                            <button className='btn btn-secondary  '> Continue With GitHub</button>
+                        </div>
                     </div>
                 </div>
             </div>

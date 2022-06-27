@@ -1,13 +1,11 @@
 import React from 'react';
 import Footer from './Footer';
-import Navbar from './Navbar';
 
 const Banner = () => {
     return (
         // <div className='' 
         // style={{ background: "url(https://thumbs.dreamstime.com/b/greek-food-background-traditional-different-dishes-top-view-close-up-143835841.jpg)" }}>
         <div >
-            <Navbar />
             <div className="hero min-h-screen ">
                 <div className="hero-content text-center">
                     <div className="max-w-lg">
