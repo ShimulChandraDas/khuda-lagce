@@ -15,7 +15,8 @@ const Navbar = () => {
     return (
         <div className="navbar bg-transparent rounded-md fixed" >
             <div className="flex-1">
-                <a className="btn btn-ghost text-xl">Khuda Lagce</a>
+                <NavLink className="btn btn-ghost text-xl" to='/'>Khuda Lagce</NavLink>
+
             </div>
             <div className="flex-none">
 
